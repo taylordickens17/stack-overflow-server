@@ -1,8 +1,11 @@
 require('dotenv').config();
 let express = require('express'); //import express (it's a framework)
 let app = express(); //allows us to create an express app
+let sequelize = require('./db');
 
 let post = require('./controllers/postcontroller');
+
+sequelize.sync();
 
 app.use('/post', post); //routes us to post controller
 
