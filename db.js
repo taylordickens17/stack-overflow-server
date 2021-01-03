@@ -4,7 +4,7 @@
 
 // The MS Windows instalation package consists of both PostgreSQL server and PgAdmin client. So far right after the instalation you are able to manage your databases.
 
-const Sequelize = require('sequelize');
+const { Sequelize } = require('sequelize');
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialect: 'postgres'
 });
@@ -13,17 +13,17 @@ sequelize.authenticate()
     .then(() => console.log('The database is connected, gurl'))
     .catch((err => console.log(err)))
 
-User = sequelize.import('./models/user.js');
-Post = sequelize.import('./models/post.js');
-Comment = sequelize.import('./models/comment.js');
+// User = sequelize.import('./models/user.js');
+// Post = sequelize.import('./models/post.js');
+// Comment = sequelize.import('./models/comment.js');
 
-Post.belongsTo(User);
-Comment.belongsTo(User);
+// Post.belongsTo(User);
+// Comment.belongsTo(User);
 
-Comment.belongsTo(Post);
-Post.hasMany(Comment);
+// Comment.belongsTo(Post);
+// Post.hasMany(Comment);
 
-User.hasMany(Post);
-User.hasMany(Comment);
+// User.hasMany(Post);
+// User.hasMany(Comment);
 
 module.exports = sequelize;

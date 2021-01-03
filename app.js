@@ -1,14 +1,19 @@
 require('dotenv').config();
 let express = require('express'); //import express (it's a framework)
-let app = express(); //allows us to create an express app
 let sequelize = require('./db');
+let app = express(); //allows us to create an express app
 
 let post = require('./controllers/postcontroller');
+let user = require('./controllers/usercontroller');
+
 
 sequelize.sync();
 
-app.use('/post', post); //routes us to post controller
+app.use(express.json());
 
-app.listen(3000, function () { //3000 is argument of port, function is callback
+app.use('/post', post); //routes us to post controller
+app.use('/user', user);
+
+app.listen(process.env.PORT, () => { //3000 is argument of port, function is callback
     console.log('App is listening on port 3000, gurl');
 })
