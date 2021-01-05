@@ -13,17 +13,4 @@ sequelize.authenticate()
     .then(() => console.log('The database is connected, gurl'))
     .catch((err => console.log(err)))
 
-// User = sequelize.import('./models/user.js');
-// Post = sequelize.import('./models/post.js');
-// Comment = sequelize.import('./models/comment.js');
-
-// Post.belongsTo(User);
-// Comment.belongsTo(User);
-
-// Comment.belongsTo(Post);
-// Post.hasMany(Comment);
-
-// User.hasMany(Post);
-// User.hasMany(Comment);
-
 module.exports = sequelize;
