@@ -1,6 +1,5 @@
-require('dotenv').config();
 const router = require('express').Router();
-const Comment = require('../models/comment');
+const Comment = require('../models');
 
 router.post('/comment', function (req, res) {
     let { username, comment, picUrl } = req.body;

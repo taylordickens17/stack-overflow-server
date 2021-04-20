@@ -2,7 +2,7 @@
 
 // The pgAdmin is a sort of client. You are able to manipulate schema and data on an instance or multiple instances of PostgreSQL engines.
 
-// The MS Windows instalation package consists of both PostgreSQL server and PgAdmin client. So far right after the instalation you are able to manage your databases.
+// The MS Windows installation package consists of both PostgreSQL server and PgAdmin client. So far right after the installation you are able to manage your databases.
 
 const { Sequelize } = require('sequelize');
 const sequelize = new Sequelize(process.env.DATABASE_URL, {

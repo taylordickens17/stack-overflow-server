@@ -12,7 +12,7 @@ const validateSession = (req, res, next) => {
 
         if (payload) {
             User.findOne({
-                where: { id: payload.id }// finds a user whoose id matches the id assigned upon login
+                where: { id: payload.id }// finds a user whose id matches the id assigned upon login
             })
                 .then(user => {
                     console.log("REQUEST BEFORE", req.user)

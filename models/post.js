@@ -1,5 +1,7 @@
-module.exports = (sequelize, DataTypes) => {
-    const Post = sequelize.define('post', {
+const {DataTypes} = require('sequelize');
+const db = require('../db');
+
+const Post = db.define('post', {
         username: {
             type: DataTypes.STRING,
             allowNull: false
@@ -14,5 +16,5 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: ""
         }
     })
-    return Post;
-}
+
+module.exports = Post;
